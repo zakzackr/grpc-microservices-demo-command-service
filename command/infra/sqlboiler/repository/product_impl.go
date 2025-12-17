@@ -18,7 +18,7 @@ import (
 type productRepositorySQLBoiler struct{}
 
 // コンストラクタ
-func NewproductRepositorySQLBoiler() products.ProductRepository {
+func NewProductRepositorySQLBoiler() products.ProductRepository {
 	// フック関数の登録
 	models.AddProductHook(boil.AfterInsertHook, ProductAfterInsertHook)
 	models.AddProductHook(boil.AfterUpdateHook, ProductAfterUpdateHook)

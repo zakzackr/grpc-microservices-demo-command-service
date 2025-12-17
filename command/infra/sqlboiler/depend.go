@@ -9,7 +9,7 @@ import (
 var RepDepend = fx.Options(
 	fx.Provide(
 		// Repositoryインターフェイス実装のコンストラクタを指定
-		repository.NewcategoryRepositorySQLBoiler, // カテゴリ用Reposititory
-		repository.NewproductRepositorySQLBoiler,  // 商品用Repository
+		repository.NewCategoryRepositorySQLBoiler, // カテゴリ用ReposititoryImpl
+		repository.NewProductRepositorySQLBoiler,  // 商品用RepositoryImpl
 	),
 )

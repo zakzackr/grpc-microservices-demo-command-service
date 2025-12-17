@@ -18,7 +18,7 @@ import (
 type categoryRepositorySQLBoiler struct{}
 
 // コンストラクタ
-func NewcategoryRepositorySQLBoiler() categories.CategoryRepository {
+func NewCategoryRepositorySQLBoiler() categories.CategoryRepository {
 	// フック関数の登録
 	models.AddCategoryHook(boil.AfterInsertHook, CategoryAfterInsertHook)
 	models.AddCategoryHook(boil.AfterUpdateHook, CategoryAfterUpdateHook)
