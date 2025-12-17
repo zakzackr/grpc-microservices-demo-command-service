@@ -13,5 +13,5 @@ services:
             - external
 networks:
     external:
-        # name: sampledb_net
-        # external: true
+        name: sampledb_net
+        external: true
