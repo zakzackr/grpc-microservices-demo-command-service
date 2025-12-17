@@ -10,11 +10,15 @@ require (
 	github.com/google/uuid v1.6.0
 	github.com/onsi/ginkgo/v2 v2.27.3
 	github.com/onsi/gomega v1.38.3
+	go.uber.org/fx v1.24.0
 )
 
 require (
 	filippo.io/edwards25519 v1.1.0 // indirect
 	github.com/spf13/cast v1.5.0 // indirect
+	go.uber.org/dig v1.19.0 // indirect
+	go.uber.org/multierr v1.10.0 // indirect
+	go.uber.org/zap v1.26.0 // indirect
 	golang.org/x/xerrors v0.0.0-20220609144429-65e65417b02f // indirect
 )
 
