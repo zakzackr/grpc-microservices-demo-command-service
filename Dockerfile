@@ -1,4 +1,4 @@
-FROM golang:1.23-alpine
+FROM golang:1.24-alpine
 RUN apk update && apk add git curl alpine-sdk
 RUN mkdir /go/src/command
 WORKDIR /go/src/command

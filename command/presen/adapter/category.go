@@ -1,4 +1,4 @@
-package adaptor
+package adapter
 
 import (
 	"github.com/zakzackr/grpc-microservices-demo-command-service/domain/models/categories"
@@ -6,7 +6,7 @@ import (
 )
 
 // データ変換インターフェース
-type CategoryAdaptor interface {
+type CategoryAdapter interface {
 	// CategoryUpParamをCategoryエンティティに変換
 	ToEntity(param *pb.CategoryUpParam) (*categories.Category, error) 
 	// CategoryエンティティをCategoryUpResultに変換

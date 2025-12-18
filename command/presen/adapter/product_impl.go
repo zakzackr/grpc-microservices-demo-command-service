@@ -1,4 +1,4 @@
-package adaptor
+package adapter
 
 import (
 	"github.com/zakzackr/grpc-microservices-demo-command-service/domain/models/categories"
@@ -8,13 +8,13 @@ import (
 	"google.golang.org/protobuf/types/known/timestamppb"
 )
 
-type ProductAdaptorImpl struct {}
+type ProductAdapterImpl struct {}
 
-func NewProductAdaptorImpl() ProductAdaptor {
-	return &ProductAdaptorImpl{}
+func NewProductAdapterImpl() ProductAdapter {
+	return &ProductAdapterImpl{}
 }
 // ProductUpParamをProductエンティティに変換
-func (ins *ProductAdaptorImpl) ToEntity(param *pb.ProductUpParam) (*products.Product, error) {
+func (ins *ProductAdapterImpl) ToEntity(param *pb.ProductUpParam) (*products.Product, error) {
 	switch param.GetCrud() {
 	case pb.CRUD_INSERT:
 		name, err := products.NewProductName(param.GetName())
@@ -64,7 +64,7 @@ func (ins *ProductAdaptorImpl) ToEntity(param *pb.ProductUpParam) (*products.Pro
 }
 
 // ProductエンティティをProductUpResultに変換
-func (ins *ProductAdaptorImpl) ToResult(result any) *pb.ProductUpResult {
+func (ins *ProductAdapterImpl) ToResult(result any) *pb.ProductUpResult {
 	var up_product *pb.Product
 	var up_err *pb.Error
 	switch v := result.(type){

@@ -1,4 +1,4 @@
-package adaptor
+package adapter
 
 import (
 	"github.com/zakzackr/grpc-microservices-demo-command-service/domain/models/categories"
@@ -7,15 +7,15 @@ import (
 	"google.golang.org/protobuf/types/known/timestamppb"
 )
 
-// Adaptorインターフェースの実装
-type CategoryAdaptorImpl struct {}
+// Adapterインターフェースの実装
+type CategoryAdapterImpl struct {}
 
-func NewCategoryAdaptorImpl() CategoryAdaptor {
-	return &CategoryAdaptorImpl{}
+func NewCategoryAdapterImpl() CategoryAdapter {
+	return &CategoryAdapterImpl{}
 }
 
 // CategoryUpParamをCategoryエンティティに変換
-func (ins *CategoryAdaptorImpl) ToEntity(param *pb.CategoryUpParam) (*categories.Category, error) {
+func (ins *CategoryAdapterImpl) ToEntity(param *pb.CategoryUpParam) (*categories.Category, error) {
 	switch param.GetCrud() {
 	case pb.CRUD_INSERT:
 		name, err := categories.NewCategoryName(param.GetName())
@@ -49,7 +49,7 @@ func (ins *CategoryAdaptorImpl) ToEntity(param *pb.CategoryUpParam) (*categories
 }
 
 // CategoryエンティティをCategoryUpResultに変換
-func (ins *CategoryAdaptorImpl) ToResult(result any) *pb.CategoryUpResult {
+func (ins *CategoryAdapterImpl) ToResult(result any) *pb.CategoryUpResult {
 	var up_category *pb.Category
 	var up_err *pb.Error
 
