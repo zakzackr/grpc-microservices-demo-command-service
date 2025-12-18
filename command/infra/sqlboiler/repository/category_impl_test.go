@@ -19,7 +19,7 @@ var _ = Describe("categoryRepositorySQLBoiler構造体", Ordered, Label("Categor
 	// 前処理
 	BeforeAll(func() {
 		// リポジトリの生成
-		rep = NewcategoryRepositorySQLBoiler()
+		rep = NewCategoryRepositorySQLBoiler()
 	})
 
 	// テスト毎の前処理
