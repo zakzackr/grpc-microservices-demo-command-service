@@ -17,7 +17,7 @@ func NewProductServiceImpl(rep products.ProductRepository) service.ProductServic
 	return &productServiceImpl{rep: rep}
 }
 
-// カテゴリを追加する
+// 商品を追加する
 func (ins *productServiceImpl) Add(ctx context.Context, product *products.Product) error {
 	// トランザクションを開始する
 	tran, err := ins.begin(ctx)
@@ -39,7 +39,7 @@ func (ins *productServiceImpl) Add(ctx context.Context, product *products.Produc
 	return err
 }
 
-// カテゴリを更新する
+// 商品を更新する
 func (ins *productServiceImpl) Update(ctx context.Context, product *products.Product) error {
 	// トランザクションを開始する
 	tran, err := ins.begin(ctx)
