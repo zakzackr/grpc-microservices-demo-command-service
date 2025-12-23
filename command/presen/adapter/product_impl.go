@@ -84,7 +84,6 @@ func (ins *ProductAdapterImpl) ToResult(result any) *pb.ProductUpResult {
 			price = int32(v.Price().Value())
 		}
 		up_product = &pb.Product{Id: v.Id().Value(), Name: name, Price: price, Category: c}
-
 	case *errs.DomainError: 
 		up_err = &pb.Error{Type: "Domain Error", Message: v.Error()}
 	case *errs.CRUDError: 
